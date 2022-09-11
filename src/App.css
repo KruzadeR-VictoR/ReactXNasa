@@ -1,0 +1,31 @@
+*{
+  font-family: 'Poppins', sans-serif;
+}
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card{
+  display: flex;
+  flex-flow: column;
+  background: teal;
+  max-height: 40rem;
+  aspect-ratio: 1;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+.media iframe{
+  width: 100%;  
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+}
+.description{ 
+  text-align: justify;     
+}
+.title{
+  line-height: 1.2em;
+  
+}
