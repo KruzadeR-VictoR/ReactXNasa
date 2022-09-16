@@ -1,0 +1,62 @@
+.hero-wrapper {
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+}
+
+.hero-wrapper .hero {
+  padding: 1rem;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+}
+
+.hero-wrapper .hero .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  width: 90%;
+  max-width: 60rem;
+  aspect-ratio: 1;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.hero-wrapper .hero .card .heading {
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.hero-wrapper .hero .card .media {
+  width: 30rem;
+  margin: auto;
+}
+
+.hero-wrapper .hero .card .media img {
+  max-width: 100%;
+  /* aspect-ratio: 16/9; */
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.hero-wrapper .hero .card .description {
+  text-align: justify;
+  margin-top: 1rem;
+}
+
+.hero-wrapper .hero .card .title {
+  line-height: 1.2em;
+}
+
+.hero-wrapper .hero .card .explanation {
+  margin-top: 1rem;
+  color: rgba(245, 245, 245, 0.856);
+}
+/*# sourceMappingURL=Hero.css.map */

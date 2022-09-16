@@ -1,0 +1,45 @@
+.navbar {
+  width: 100%;
+  width: 85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  margin: 0 auto;
+  // background: teal;
+  a {
+    text-decoration: none;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    .nasa-png {
+      max-width: 3rem;
+    }
+    span {
+      font-size: 1.3rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: hsl(193, 86%, 66%);
+    }
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    li {
+      display: flex;
+      a {
+        text-decoration: none;
+        font-weight: 300;
+        color: hsl(193, 86%, 66%);
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover {
+        a {
+          color: teal;
+        }
+      }
+    }
+  }
+}
