@@ -1,6 +1,6 @@
 .navbar {
   width: 100%;
-  width: 85rem;
+  max-width: 85rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -1,0 +1,43 @@
+.singleImage {
+  display: flex;
+  flex-flow: column;
+  .content {
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem 3rem;
+    // background: red;
+    .image {
+      width: 100%;
+      img {
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 5px;
+      }
+      .img-courtesy {
+        font-size: 0.8rem;
+        font-weight: 300;
+        letter-spacing: 1px;
+        span {
+          // margin-left: .5rem;
+          color: teal;
+        }
+      }
+    }
+    .caption {
+      display: flex;
+      flex-flow: column;
+      gap: 2rem;
+      .title {
+        letter-spacing: 1px;
+        font-weight: 700;
+      }
+      .description {
+        font-weight: 300;
+        line-height: 1.7em;
+      }
+    }
+  }
+}

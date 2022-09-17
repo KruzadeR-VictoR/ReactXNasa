@@ -1,9 +1,34 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "../Styles/Home.css";
 import Navbar from "../Components/Navbar";
 import bgHome from "../assets/bg-Home.mp4";
+import axios from "axios";
+import { dataContext } from "./Pages";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
+  const { Datas, setDatas, SearchInput, setSearchInput, fetchData } =
+    useContext(dataContext);
+  const [Search, setSearch] = useState();
+
+  const handleSearch = () => {
+    if (Search.match(/[a-zA-z]/g)) {
+      fetchData(`/search?q=${Search}&media_type=image`);
+      setSearchInput(Search);
+      navigate(`/images`);
+    } else {
+      alert("fill the correct input");
+    }
+  };
+
+  const handlesearchTrigger = (e) => {
+    console.log(e);
+    if (e.key == "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
     <>
       <div className="Home">
@@ -26,8 +51,14 @@ function Home() {
                 name="search"
                 id="search"
                 placeholder="Seach any image..."
+                onChange={(e) => setSearch(e.target.value)}
+                onKeyDown={(e) => handlesearchTrigger(e)}
               />
-              <button type="button" className="search-Btn">
+              <button
+                type="button"
+                className="search-Btn"
+                onClick={handleSearch}
+              >
                 Search
               </button>
             </div>

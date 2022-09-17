@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Hero.css";
 import axios from "axios";
 import Navbar from "./Navbar";
 import bgHero from "../assets/bg-hero.jpg";
+import { dataContext } from "../Pages/Pages";
 
 function Hero() {
+  const { Datas, setDatas, fetchData } = useContext(dataContext);
+
   const [Apod, setApod] = useState({});
 
   const key = import.meta.env.VITE_API_KEY;
@@ -18,12 +21,12 @@ function Hero() {
         setApod(result.data);
       });
   }, []);
-
+ 
   console.log(Apod);
 
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <div className="hero-wrapper" style={{ background: `url(${bgHero})` }}>
         <div className="hero">
           {/* <h3 className="heading">Astronomy Picture of the Day</h3> */}

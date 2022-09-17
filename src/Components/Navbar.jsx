@@ -13,7 +13,7 @@ function Navbar() {
             NASA x <span>React</span>
           </h1> */}
             <img className="nasa-png" src={logo} alt="" />
-            <span>x React</span>
+            <span>x REACT</span>
           </div>
         </Link>
         <ul className="nav-links">
