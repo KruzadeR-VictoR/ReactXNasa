@@ -15,7 +15,6 @@ function Images() {
   const override = {
     display: "block",
     margin: "0 auto",
-    borderColor: "red",
   };
 
   const handleImage = (nasaID) => {
@@ -38,25 +37,31 @@ function Images() {
             cssOverride={override}
           />
         ) : (
-          <div className="grid">
-            {Datas?.map((image, index) => (
-              // <>
-              <div
-                key={index}
-                className="image-card"
-                onClick={() => handleImage(image.data[0].nasa_id)}
-              >
-                <div className="image">
-                  <img src={image.links[0].href} alt="" />
-                </div>
-                <div className="caption">
-                  <h1 className="title">{image.data[0]?.title}</h1>
-                  {/* <p className="description">{image.data[0]?.description}</p> */}
-                </div>
+          <>
+            {Datas == '' ? (
+              <span className="no-dataFound">No result found</span>
+            ) : (
+              <div className="grid">
+                {Datas?.map((image, index) => (
+                  // <>
+                  <div
+                    key={index}
+                    className="image-card"
+                    onClick={() => handleImage(image.data[0].nasa_id)}
+                  >
+                    <div className="image">
+                      <img src={image.links[0].href} alt="" />
+                    </div>
+                    <div className="caption">
+                      <h1 className="title">{image.data[0]?.title}</h1>
+                      {/* <p className="description">{image.data[0]?.description}</p> */}
+                    </div>
+                  </div>
+                  // </>
+                ))}
               </div>
-              // </>
-            ))}
-          </div>
+            )}
+          </>
         )}
       </div>
     </>
