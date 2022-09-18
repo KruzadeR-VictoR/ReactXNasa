@@ -3,6 +3,9 @@ import axios from "axios";
 import "./SingleImage.css";
 import { useParams } from "react-router-dom";
 import Navbar from "./Navbar";
+import CardHeader from "@mui/material/CardHeader";
+import Avatar from "@mui/material/Avatar";
+import IconButton from "@mui/material/IconButton";
 
 function SingleImage() {
   const [Image, setImage] = useState();
@@ -39,6 +42,16 @@ function SingleImage() {
           <div className="caption">
             <h1 className="title">{Image?.data[0].title}</h1>
             <p className="description">${Image?.data[0].description}</p>
+            <div className="Tags">
+              {Image?.data[0].keywords && (
+                <>
+                  <h1 className="tag-heading">Tags</h1>
+                  {Image?.data[0].keywords.map((tag) => (
+                    <div className="tag">{tag}</div>
+                  ))}
+                </>
+              )}
+            </div>
           </div>
         </div>
       </div>
