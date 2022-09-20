@@ -1,13 +1,41 @@
-.hero-wrapper {
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: cover !important;
-}
-
 .hero-wrapper .hero {
   padding: 1rem;
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
+  z-index: 100;
+  position: relative;
+}
+
+.hero-wrapper .hero .heading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 19rem;
+  font-size: 9rem;
+  line-height: 1.1em;
+  text-align: center;
+  letter-spacing: 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  z-index: -1;
+  color: transparent;
+  background: -webkit-gradient(linear, left top, right top, from(#288078), color-stop(#203a43), to(#356377));
+  background: linear-gradient(to right, #288078, #203a43, #356377);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+@media screen and (min-width: 1400px) {
+  .hero-wrapper .hero .heading {
+    height: 25rem;
+    padding: 0 4rem;
+    font-size: 12rem;
+  }
 }
 
 .hero-wrapper .hero .card {
@@ -26,37 +54,54 @@
   margin: 0 auto;
 }
 
-.hero-wrapper .hero .card .heading {
-  font-weight: 300;
-  letter-spacing: 1px;
-  margin-bottom: 2rem;
-  color: white;
-}
-
 .hero-wrapper .hero .card .media {
   width: 30rem;
   margin: auto;
+  -webkit-perspective: 800px;
+          perspective: 800px;
 }
 
 .hero-wrapper .hero .card .media img {
+  cursor: pointer;
   max-width: 100%;
   /* aspect-ratio: 16/9; */
   border-radius: 10px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.hero-wrapper .hero .card .media img:hover {
+  scale: 1.08;
+  -webkit-transform: rotateY(130deg);
+          transform: rotateY(130deg);
 }
 
 .hero-wrapper .hero .card .description {
   text-align: justify;
   margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+  background: #28282b;
 }
 
 .hero-wrapper .hero .card .title {
   line-height: 1.2em;
+  color: transparent;
+  background: -webkit-gradient(linear, left top, right top, from(#00416a), to(#e4e5e6));
+  background: linear-gradient(to right, #00416a, #e4e5e6);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .hero-wrapper .hero .card .explanation {
+  font-weight: 300;
   margin-top: 1rem;
-  color: rgba(245, 245, 245, 0.856);
+  color: transparent;
+  background: -webkit-gradient(linear, left top, right top, from(#acb6e5), to(#86fde8));
+  background: linear-gradient(to right, #acb6e5, #86fde8);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 /*# sourceMappingURL=Hero.css.map */
