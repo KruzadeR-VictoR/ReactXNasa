@@ -1,15 +1,16 @@
-import React, { useContext, useState } from "react";
+import React, {useContext, useEffect, useLayoutEffect, useState } from "react";
 import "../Styles/Home.css";
 import Navbar from "../Components/Navbar";
-import bgHome from "../assets/bg-Home.mp4";
-import axios from "axios";
+import bgHome from "../assets/bg-Home.webm";
+// const bgHome=React.lazy(()=>import('../assets/bg-Home.webm'))
 import { dataContext } from "./Pages";
 import { useNavigate } from "react-router-dom";
+import { useRef } from "react";
+import gsap from "gsap";
 
 function Home() {
   const navigate = useNavigate();
-  const { Datas, setDatas, SearchInput, setSearchInput, fetchData } =
-    useContext(dataContext);
+  const { setSearchInput, fetchData } = useContext(dataContext);
   const [Search, setSearch] = useState();
 
   const handleSearch = () => {
@@ -29,21 +30,39 @@ function Home() {
     }
   };
 
+  const navRef = useRef(null);
+  useEffect(() => {
+    const tl = gsap.timeline({ defaults: { duration: 1 } });
+    return () => {
+      tl.from(".Home", {
+        scale: 0,
+        opacity: 0,
+        ease: "power4",
+      });
+
+      tl.from(".animHome", {
+        y: 200,
+        opacity: 0,
+        stagger: 0.5,
+      });
+    };
+  }, []);
+
   return (
     <>
       <div className="Home">
         <Navbar />
         <div className="Hero">
-          {/* set video as background */}
+          {/* set video as background */}          
           <video className="bg-Home" autoPlay loop>
             <source src={bgHome} type="video/mp4" />
-          </video>
+          </video>          
           {/* page Content  */}
           <div className="content">
-            <h1 className="heading">
+            <h1 className="heading animHome">
               Get the <span> universe</span> in your hand <span>.</span>
             </h1>
-            <div className="search-box">
+            <div className="search-box animHome">
               <label htmlFor="search"></label>
               <input
                 className="search-input"

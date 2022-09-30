@@ -1,18 +1,22 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import axios from "axios";
 import "./SingleImage.css";
 import { useParams } from "react-router-dom";
 import Navbar from "./Navbar";
 import { RingLoader } from "react-spinners";
 import { dataContext } from "../Pages/Pages";
+// import Particle from "../Particles/Particle";
+
+const Particle = React.lazy(() => import("../Particles/Particle"));
 
 function SingleImage() {
   const { isLodaing, setisLodaing } = useContext(dataContext);
   const [Image, setImage] = useState();
-
   const { id } = useParams();
+  const descRef = useRef();
 
   useEffect(() => {
+    console.log(descRef);
     try {
       setisLodaing(true);
       axios
@@ -39,7 +43,12 @@ function SingleImage() {
     translate: "-50% -50%",
   };
 
-  console.log(Image);
+  // console.log(Image);
+  if (Image) {
+    // descRef.innerHtml = Image.data[0].title;
+    descRef.current.innerHTML = Image.data[0].description;
+  }
+
   return (
     <>
       <div className="singleImage">
@@ -58,9 +67,8 @@ function SingleImage() {
             <div className="image">
               <img src={Image?.links[0].href} alt={Image?.data[0].title} />
               <div className="img-courtesy">
-                Photo by{" "}
-                <span>
-                  {" "}
+                Photo by &nbsp;
+                <span>                   
                   {Image?.data[0].secondary_creator
                     ? Image?.data[0].secondary_creator
                     : "https://www.nasa.gov"}
@@ -69,7 +77,8 @@ function SingleImage() {
             </div>
             <div className="caption">
               <h1 className="title">{Image?.data[0].title}</h1>
-              <p className="description">${Image?.data[0].description}</p>
+              {/* <p className="description">${Image?.data[0].description}</p> */}
+              <p ref={descRef} className="description"></p>
               {/* will update this later  */}
               {/* <div className="Tags">
               {Image?.data[0].keywords && (
@@ -85,6 +94,7 @@ function SingleImage() {
           </div>
         )}
       </div>
+      <Particle />
     </>
   );
 }

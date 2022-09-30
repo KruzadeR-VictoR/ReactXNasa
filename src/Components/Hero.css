@@ -1,3 +1,9 @@
+.Apod {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
 .hero-wrapper .hero {
   padding: 1rem;
   z-index: 100;
@@ -8,8 +14,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 19rem;
+  height: 100%;
   font-size: 9rem;
+  font-size: 10.5vw;
   line-height: 1.1em;
   text-align: center;
   letter-spacing: 1px;
@@ -19,23 +26,15 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   z-index: -1;
   color: transparent;
   background: -webkit-gradient(linear, left top, right top, from(#288078), color-stop(#203a43), to(#356377));
   background: linear-gradient(to right, #288078, #203a43, #356377);
   background-clip: text;
   -webkit-background-clip: text;
-}
-
-@media screen and (min-width: 1400px) {
-  .hero-wrapper .hero .heading {
-    height: 25rem;
-    padding: 0 4rem;
-    font-size: 12rem;
-  }
 }
 
 .hero-wrapper .hero .card {
@@ -61,6 +60,12 @@
           perspective: 800px;
 }
 
+.hero-wrapper .hero .card .media:hover img {
+  scale: 1.08;
+  -webkit-transform: rotateY(130deg);
+          transform: rotateY(130deg);
+}
+
 .hero-wrapper .hero .card .media img {
   cursor: pointer;
   max-width: 100%;
@@ -70,12 +75,6 @@
      object-fit: contain;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-}
-
-.hero-wrapper .hero .card .media img:hover {
-  scale: 1.08;
-  -webkit-transform: rotateY(130deg);
-          transform: rotateY(130deg);
 }
 
 .hero-wrapper .hero .card .description {

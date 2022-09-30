@@ -36,6 +36,8 @@
   max-width: 50rem;
   margin: 0 auto;
   border-radius: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .singleImage .content .image .img-courtesy {
@@ -57,17 +59,37 @@
       -ms-flex-flow: column;
           flex-flow: column;
   gap: 2rem;
+  padding: 1rem;
+  border-radius: 5px;
+  background: #28282b;
 }
 
 .singleImage .content .caption .title {
+  max-width: 50rem;
+  line-height: 1em;
   letter-spacing: 1px;
   font-weight: 700;
+  color: transparent;
+  background: -webkit-gradient(linear, left top, right top, from(#00416a), to(#e4e5e6));
+  background: linear-gradient(to right, #00416a, #e4e5e6);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .singleImage .content .caption .description {
   max-width: 50rem;
+  text-align: justify;
   font-weight: 300;
   line-height: 1.7em;
+  color: transparent;
+  background: -webkit-gradient(linear, left top, right top, from(#acb6e5), to(#86fde8));
+  background: linear-gradient(to right, #acb6e5, #86fde8);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.singleImage .content .caption .description a {
+  color: teal;
 }
 
 .singleImage .content .caption .Tags .tag-heading {

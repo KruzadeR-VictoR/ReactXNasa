@@ -1,0 +1,106 @@
+.Videos {
+    display: flex;
+    flex-flow: column;
+  }
+  .image-heading {
+    text-align: center;
+    margin: 3rem 0 1rem;
+    span {
+      margin-left: 0.5rem;
+      color: teal;
+    }
+  }
+  
+  .grid {
+    flex: 1;
+    width: 100%;
+    max-width: 100vw;
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    column-count: 4;
+    column-width: 33%;  
+    // justify-items: center;
+    // gap: 3rem;
+    padding: 1rem 3rem;
+    margin: 2rem auto;
+    //   background: teal;
+    @media screen and (max-width:1400px) {
+    column-count: 3;    
+    }
+  }
+  
+  .image-card {
+    margin: 1rem;
+    cursor: pointer;
+    position: relative;
+    //   min-height: 30rem;
+    // width: 100%;
+    display: flex;
+    flex-flow: column;
+  
+    border-radius: 10px;
+    //   box-shadow: 1px 5px 10px -5px rgba(255, 255, 255, 0.404);
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    @media screen and (max-width:1400px){
+      margin-bottom: 1.5rem;
+    }
+    &:hover {
+      scale: 1.1;
+    }
+    .image {
+      display: flex;
+      // height: 20rem;
+      // max-height: 20rem;
+      // width: 25rem;
+      width: 100%;
+      // min-width: 15rem;        
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+    .caption {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      translate: -50% 0;
+      // width: calc(100% + 10px);
+      width: 101%;    
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.705);
+      // background: teal;
+      .title {
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 300;
+        color: rgb(199, 199, 199);
+      }
+      .description {
+        font-size: 1rem;
+      }
+    }
+  }
+  
+  // .Images {
+  //   color: black;
+  //   background: whitesmoke;
+  // }
+  // .Loader{
+  //     width: 100vw;
+  //     display: flex;
+  //     justify-content: center;
+  //     background: red;
+  // }
+  
+  //> Utilities
+  
+  .no-dataFound {
+    text-align: center;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    margin-top: 10%;
+  }
+  

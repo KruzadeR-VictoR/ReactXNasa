@@ -21,6 +21,7 @@ function Images() {
     console.log(nasaID);
     navigate(`/images/${nasaID}`);
   };
+  
 
   return (
     <>
@@ -38,7 +39,7 @@ function Images() {
           />
         ) : (
           <>
-            {Datas == '' ? (
+            {Datas == "" ? (
               <span className="no-dataFound">No result found</span>
             ) : (
               <div className="grid">
@@ -50,7 +51,11 @@ function Images() {
                     onClick={() => handleImage(image.data[0].nasa_id)}
                   >
                     <div className="image">
-                      <img src={image.links[0].href} alt="" />
+                      <img
+                        src={image.links[0].href}
+                        alt=""
+                        onClick={(e) => handleImageFullscreen(e)}
+                      />
                     </div>
                     <div className="caption">
                       <h1 className="title">{image.data[0]?.title}</h1>
