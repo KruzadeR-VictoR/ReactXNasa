@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import '../Styles/Video.css'
 import Navbar from "../Components/Navbar";
-import bgHome from "../assets/bg-Home.mp4";
+import bgHome from "../assets/bg-Home.webm";
 import { useNavigate } from 'react-router-dom';
 import { dataContext } from './Pages';
 import gsap from "gsap";

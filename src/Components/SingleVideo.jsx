@@ -6,8 +6,8 @@ import Navbar from "./Navbar";
 import { RingLoader } from "react-spinners";
 import { dataContext } from "../Pages/Pages";
 import VideoJS from "../VideoJS/VideoJS";
-// import vid from "../assets/bg-Home.webm";
-const vid=React.lazy(()=>import('../assets/bg-Home.webm'))
+import vid from "../assets/bg-Home.webm";
+// const vid=React.lazy(()=>import('../assets/bg-Home.webm'))
 
 function SingleVideo() {
   const { isLodaing, setisLodaing } = useContext(dataContext);
