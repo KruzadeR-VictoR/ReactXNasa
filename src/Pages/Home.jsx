@@ -31,7 +31,7 @@ function Home() {
   };
 
   const navRef = useRef(null);
-  useEffect(() => {
+  useLayoutEffect(() => {
     const tl = gsap.timeline({ defaults: { duration: 1 } });
     return () => {
       tl.from(".Home", {

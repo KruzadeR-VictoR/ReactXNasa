@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useLayoutEffect, useState } from "react";
 import '../Styles/Video.css'
 import Navbar from "../Components/Navbar";
 import bgHome from "../assets/bg-Home.webm";
@@ -29,9 +29,8 @@ function Video() {
     }
   };
 
-  useEffect(() => {
-    const tl = gsap.timeline({ defaults: { duration: 1 } });
-    return () => {
+  useLayoutEffect(() => {
+    const tl = gsap.timeline({ defaults: { duration: 1 } });    
       tl.from(".Video", {
         scale: 0,
         opacity: 0,
@@ -42,8 +41,7 @@ function Video() {
         y: 200,
         opacity: 0,
         stagger: 0.5,
-      });
-    };
+      });    
   }, []);
 
   return (

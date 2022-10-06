@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useLayoutEffect, useState } from "react";
 import "./Hero.css";
 import axios from "axios";
 import Navbar from "./Navbar";
@@ -22,7 +22,7 @@ function Hero() {
       });
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const tl = gsap.timeline({ defaults: { duration: 1 } });
     return () => {
       tl.from(".Apod", {
