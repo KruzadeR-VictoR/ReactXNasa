@@ -23,8 +23,7 @@ function Hero() {
   }, []);
 
   useLayoutEffect(() => {
-    const tl = gsap.timeline({ defaults: { duration: 1 } });
-    return () => {
+    const tl = gsap.timeline({ defaults: { duration: 1 } });    
       tl.from(".Apod", {
         scale: 0,
         opacity: 0,
@@ -35,8 +34,7 @@ function Hero() {
         y: 200,
         opacity: 0,
         stagger: 0.5,
-      });
-    };
+      });    
   }, []);
 
   const handleImageFullscreen = (e) => {
