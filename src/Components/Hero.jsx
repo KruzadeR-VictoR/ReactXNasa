@@ -12,7 +12,7 @@ import gsap from "gsap";
 function Hero() {
   const [Apod, setApod] = useState();
 
-  const key = import.meta.env.VITE_API_KEY;
+  const key = import.meta.env.VITE_API_KEY ?import.meta.env.VITE_API_KEY : `${API_KEY}` ;
 
   useEffect(() => {
     axios
