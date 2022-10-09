@@ -15,8 +15,8 @@ function SingleImage() {
   const { id } = useParams();
   const descRef = useRef();
 
-  useEffect(() => {
-    console.log(descRef);
+
+  useEffect(() => {    
     try {
       setisLodaing(true);
       axios
@@ -68,7 +68,7 @@ function SingleImage() {
               <img src={Image?.links[0].href} alt={Image?.data[0].title} />
               <div className="img-courtesy">
                 Photo by &nbsp;
-                <span>                   
+                <span>
                   {Image?.data[0].secondary_creator
                     ? Image?.data[0].secondary_creator
                     : "https://www.nasa.gov"}
@@ -94,7 +94,7 @@ function SingleImage() {
           </div>
         )}
       </div>
-      <Particle />
+      <Particle/>
     </>
   );
 }

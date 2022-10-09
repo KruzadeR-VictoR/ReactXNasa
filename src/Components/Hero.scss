@@ -37,6 +37,9 @@
       // background: linear-gradient(to right, #00416a, #e4e5e6);
       background-clip: text;
       -webkit-background-clip: text;
+      @media screen and(max-width:700px) {
+        display: none;
+      }
     }
     .card {
       display: flex;
@@ -61,11 +64,19 @@
       //   background-clip: text;
       //   -webkit-background-clip: text;
       // }
+      @media screen and(max-width:700px) {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      }
       .media {
         // width: 100%;
         width: 30rem;
         margin: auto;
         perspective: 800px;
+        @media screen and(max-width:700px) {
+          width: 100%;
+        }
         &:hover {
           img {
             scale: 1.08;
@@ -97,6 +108,10 @@
         padding: 1rem;
         border-radius: 5px;
         background: #28282b;
+        @media screen and(max-width:700px) {
+          padding: 0.5rem;
+          text-align: start;
+        }
       }
       .title {
         line-height: 1.2em;

@@ -14,6 +14,12 @@
   margin: 0 auto;
 }
 
+@media screen and (max-width: 700px) {
+  .navbar {
+    padding: 1rem;
+  }
+}
+
 .navbar a {
   text-decoration: none;
 }
@@ -36,6 +42,12 @@
   font-weight: 500;
   letter-spacing: 1px;
   color: #5ed3f3;
+}
+
+@media screen and (max-width: 700px) {
+  .navbar .logo span {
+    font-size: 1rem;
+  }
 }
 
 .navbar .nav-links {

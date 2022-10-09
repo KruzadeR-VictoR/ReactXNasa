@@ -10,6 +10,10 @@
     padding: 2rem 3rem;
     margin: 2rem auto;
     // background: red;
+    @media screen and (max-width: 700px){
+      width: 100%;
+      padding: 1rem 1.5rem;
+    }
     .image {
       width: 100%;      
       img {        
@@ -35,7 +39,12 @@
       gap: 2rem;
       padding: 1rem;      
       border-radius: 5px;
-      background: #28282b;      
+      background: #28282b;   
+      @media screen and (max-width: 700px){
+        width: 100%;
+        padding: 0;
+        gap: 1.5rem;
+      }   
       .title {
         max-width: 50rem;
         line-height: 1em;
@@ -45,6 +54,9 @@
         background: linear-gradient(to right, #00416a, #e4e5e6);
         background-clip: text;
         -webkit-background-clip: text;
+        @media screen and (max-width: 700px){
+          font-size: 1.5rem;
+        }
       }
       .description {
         max-width: 50rem;
@@ -55,6 +67,10 @@
         background: linear-gradient(to right, #acb6e5, #86fde8);
         background-clip: text;
         -webkit-background-clip: text;
+        @media screen and (max-width: 700px){
+          text-align: start;
+          font-size: .9rem;
+        }
         a {
           color: teal;
         }

@@ -25,6 +25,12 @@
   padding: 2rem 4rem;
 }
 
+@media screen and (max-width: 700px) {
+  .Hero {
+    padding: 0;
+  }
+}
+
 .Hero .content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -36,11 +42,26 @@
   gap: 1rem;
 }
 
+@media screen and (max-width: 700px) {
+  .Hero .content {
+    width: 100%;
+  }
+}
+
 .Hero .content .heading {
   width: 35rem;
   font-size: 4rem;
   line-height: 1.2em;
   margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 700px) {
+  .Hero .content .heading {
+    width: 100%;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
 }
 
 .Hero .content .heading span {
@@ -62,11 +83,29 @@
   overflow: hidden;
 }
 
+@media screen and (max-width: 700px) {
+  .Hero .search-box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    gap: .5rem;
+    padding: 0 .5rem;
+    overflow: visible;
+  }
+}
+
 .Hero .search-box .search-input[type="search"] {
   padding: 1rem;
   width: 30rem;
   height: 100%;
   border: none;
+}
+
+@media screen and (max-width: 700px) {
+  .Hero .search-box .search-input[type="search"] {
+    width: 100%;
+  }
 }
 
 .Hero .search-box .search-input[type="search"]::-webkit-search-cancel-button {
@@ -97,6 +136,13 @@
   background: teal;
 }
 
+@media screen and (max-width: 700px) {
+  .Hero .search-box .search-Btn {
+    width: 100%;
+    padding: .6rem 2rem;
+  }
+}
+
 .bg-Home {
   position: absolute;
   top: 50%;
@@ -114,6 +160,12 @@
 @media screen and (min-width: 900px) {
   .bg-Home {
     width: 100vw;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .bg-Home {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=Home.css.map */

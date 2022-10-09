@@ -1,10 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import "./Navbar.css";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 
 function Navbar() {
-  
+  const [ScreenWidth, setScreenWidth] = useState(window.innerWidth)
+  useEffect(()=>{
+    window.onresize=()=>{          
+    setScreenWidth(window.innerWidth)     
+    if(ScreenWidth>700)   {
+      console.log('helllo')
+    }
+  }
+  },[ScreenWidth])   
   return (
     <>
       <nav className="navbar">
@@ -19,7 +27,7 @@ function Navbar() {
         </Link>
         <ul className="nav-links">
           <li>
-            <Link to="/Apod"> Astronomy Picture Of The Day</Link>
+            <Link to="/Apod">{ScreenWidth > 700? 'Astronomy Picture Of The Day' : 'APOD'}</Link>
           </li>
           <li>
             <Link to="/video">Videos</Link>

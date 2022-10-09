@@ -27,6 +27,12 @@
   margin: 2rem auto;
 }
 
+@media screen and (max-width: 700px) {
+  .singleVideo .content {
+    padding: 1rem;
+  }
+}
+
 .singleVideo .content .image {
   width: 100%;
 }
@@ -64,6 +70,12 @@
   background: #28282b;
 }
 
+@media screen and (max-width: 700px) {
+  .singleVideo .content .caption {
+    padding: .5rem;
+  }
+}
+
 .singleVideo .content .caption .title {
   max-width: 50rem;
   line-height: 1em;
@@ -76,6 +88,13 @@
   -webkit-background-clip: text;
 }
 
+@media screen and (max-width: 700px) {
+  .singleVideo .content .caption .title {
+    text-align: start;
+    font-size: 1.5rem;
+  }
+}
+
 .singleVideo .content .caption .description {
   max-width: 50rem;
   text-align: justify;
@@ -86,6 +105,13 @@
   background: linear-gradient(to right, #acb6e5, #86fde8);
   background-clip: text;
   -webkit-background-clip: text;
+}
+
+@media screen and (max-width: 700px) {
+  .singleVideo .content .caption .description {
+    text-align: start;
+    font-size: 0.9rem;
+  }
 }
 
 .singleVideo .content .caption .description a {
